@@ -1,4 +1,7 @@
+com\mycompany\gui\VerDatos$3.class
 com\mycompany\logica\Controladora.class
+com\mycompany\gui\ModificarDatos$2.class
+com\mycompany\gui\VerDatos$1.class
 com\mycompany\gui\VentanaPrincipal.class
 com\mycompany\esteticacaninaproject\EsteticaCaninaProject.class
 com\mycompany\gui\VentanaPrincipal$3.class
@@ -7,13 +10,19 @@ com\mycompany\logica\Mascota.class
 com\mycompany\persistencia\exceptions\IllegalOrphanException.class
 com\mycompany\gui\VentanaPrincipal$2.class
 com\mycompany\persistencia\exceptions\PreexistingEntityException.class
+com\mycompany\gui\VerDatos$4.class
 com\mycompany\persistencia\MascotaJpaController.class
 com\mycompany\gui\CargaDatos$2.class
 com\mycompany\persistencia\ControladoraPersistencia.class
+com\mycompany\gui\VerDatos.class
+com\mycompany\gui\ModificarDatos$1.class
+com\mycompany\gui\VerDatos$2.class
 com\mycompany\logica\Duenio_.class
+com\mycompany\gui\ModificarDatos.class
 com\mycompany\gui\CargaDatos.class
 com\mycompany\persistencia\DuenioJpaController.class
 com\mycompany\persistencia\exceptions\NonexistentEntityException.class
+com\mycompany\gui\VentanaPrincipal$4.class
 com\mycompany\gui\CargaDatos$1.class
 com\mycompany\logica\Mascota_.class
 com\mycompany\gui\VentanaPrincipal$1.class

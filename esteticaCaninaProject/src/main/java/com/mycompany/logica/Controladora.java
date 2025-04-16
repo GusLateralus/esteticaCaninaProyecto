@@ -2,6 +2,7 @@
 package com.mycompany.logica;
 
 import com.mycompany.persistencia.ControladoraPersistencia;
+import java.util.List;
 
 
 public class Controladora {
@@ -33,6 +34,21 @@ public class Controladora {
         
         controladoraPersis.guardar(duenio, masco);
         
+        
+    }
+
+    public List<Mascota> traerMascotas() {
+        return controladoraPersis.traerMascotas();
+                
+                
+                
+    }
+
+    public void borrarMascota(int num_cliente) {
+        controladoraPersis.borrarMascota(num_cliente);
+    }
+
+    public void editarMascota(int num_cliente) {
         
     }
     
