@@ -18,6 +18,7 @@ public class VerDatos extends javax.swing.JFrame {
         control = new Controladora(); // Creamos la controladora de la lógica
         //Posteriormente mandará a llamar a la controladora de persistencia.
         initComponents();
+        
     }
 
     
@@ -188,17 +189,25 @@ public class VerDatos extends javax.swing.JFrame {
                 int num_cliente = Integer.parseInt(String.valueOf(tblMascotas.getValueAt(tblMascotas.getSelectedRow(), 0)));
                 
                 // Llamamos a la controladora para editar:
-                control.editarMascota(num_cliente);
+                //control.editarMascota(num_cliente); // Recuerda descomentar esto si es necesario
                 
-                ModificarDatos modifPantalla = new ModificarDatos();
+                ModificarDatos modifPantalla = new ModificarDatos(num_cliente);
                 modifPantalla.setVisible(true);
                 modifPantalla.setLocationRelativeTo(null);
                 
+                this.dispose(); // Cerramos la ventana
+                
             }
+            
+            else{
+           
+               mostrarMensaje("No ha seleccionado ninguna fila", "Error", "Error");
+           }
         }
+        
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void mostrarMensaje(String mensaje, String tipo, String titulo)
+    public void mostrarMensaje(String mensaje, String tipo, String titulo)
     {
         JOptionPane optionPane = new JOptionPane(mensaje);
         
@@ -218,6 +227,8 @@ public class VerDatos extends javax.swing.JFrame {
         dialog.setVisible(true);
     }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;

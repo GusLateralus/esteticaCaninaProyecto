@@ -2,18 +2,26 @@
 package com.mycompany.gui;
 
 import com.mycompany.logica.Controladora;
+import com.mycompany.logica.Mascota;
 import javax.swing.JOptionPane;
+
 //import javax.swing.JTextField;
 
 
 public class ModificarDatos extends javax.swing.JFrame {
 
-    Controladora control = null;
+    Controladora control = new Controladora();
+    private int num_cliente;
+    Mascota masco = control.traerMascota(num_cliente);
     
-    public ModificarDatos() {
-        control = new Controladora();
+    public ModificarDatos(int num_cliente) {
+        //control = new Controladora();
         initComponents();
+        //this.num_cliente = num_cliente;
+        cargarDatos(num_cliente);
     }
+
+    
 
     
     @SuppressWarnings("unchecked")
@@ -224,33 +232,72 @@ public class ModificarDatos extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // Se puede hacer más directo si los pasas como parámetros del método
-        /*try{
+        try{
+        // Datos de la mascota
         String nombreMasco = txtNombre.getText();
         String raza = txtRaza.getText();
         String color = txtColor.getText();
         String observaciones = txtObservaciones.getText();
-        
-        // ComboBoxes:
         String alergico = (String) cmbAlergico.getSelectedItem();
         String atencionEsp = (String) cmbAtencionEspecial.getSelectedItem();
         
         
-        // Datos del duenio:
+        // Datos del dueño:
         String nombreDuenio = txtNombreDuenio.getText();
         String celDuenio = txtCelDuenio.getText();
      
-        control.guardar(nombreMasco, raza, color, observaciones, alergico,
+        control.editarMascota(masco, nombreMasco, raza, color, observaciones, alergico,
                 atencionEsp, nombreDuenio, celDuenio);
         
         JOptionPane.showMessageDialog(rootPane, "Registro completado exitosamente.");
+        
+        VerDatos pantalla = new VerDatos();
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
+        
+        this.dispose(); //Cerramos la ventana
+        
+        
         } 
         catch(Exception e)
         {
         JOptionPane.showMessageDialog(rootPane, "Error al realizar el registro: "+e);
-        }*/
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    
+    private void cargarDatos(int num_cliente)
+    {
+        this.masco = control.traerMascota(num_cliente);
+        
+        txtNombre.setText(masco.getNombre_perro());
+        txtRaza.setText(masco.getRaza());
+        txtCelDuenio.setText(masco.getUnDuenio().getCelular());
+        txtColor.setText(masco.getColor());
+        txtObservaciones.setText(masco.getObservaciones());
+        txtNombreDuenio.setText(masco.getUnDuenio().getNombre());
+        
+        
+        if(masco.isAlergico().equals("SÍ"))
+        {
+            cmbAlergico.setSelectedIndex(1); // Te manda al primer elemento del combobox
+        }
+        
+        else{
+            cmbAlergico.setSelectedIndex(2);
+        }
+        
+        if(masco.isAtencion_especial().equals("SÍ"))
+        {
+            cmbAtencionEspecial.setSelectedIndex(1); // Lo mismo que arriba
+        }
+        
+        else{
+            cmbAtencionEspecial.setSelectedIndex(2);
+        
+        }
+        
+        
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
