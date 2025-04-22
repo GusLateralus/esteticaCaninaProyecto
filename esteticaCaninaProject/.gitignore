@@ -1,0 +1,26 @@
+# Compilación
+*.class
+
+# Carpetas de salida
+/bin/
+/build/
+/target/
+
+# Archivos de NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+.nb-gradle/
+*.orig
+
+# Archivos de configuración del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos temporales
+*.swp
+*~
